@@ -1,3 +1,4 @@
+-- SQL Student Management System
 create database StudentManagementSystem 
 use StudentManagementSystem 
 
@@ -57,5 +58,7 @@ Password varchar (50)
 
 alter table userInfo
 add primary key (Id)
+
+
 
 
