@@ -42,3 +42,39 @@ PaymentTypeName varchar (50)
 insert into PaymentType values ('Cash')
 insert into PaymentType values ('Credit')
 select * from PaymentType
+
+
+
+create table Orders
+(
+OrderId int identity (1,1) primary key,
+PaymentTypeId int,
+CustomerId int,
+OrderNumber varchar (250),
+OrderDate datetime,
+FinalTotal decimal (18,2)
+)
+
+create table OrdersDetails
+(
+OrderDetailId int identity (1,1) primary key,
+OrderId int foreign key references Orders (OrderId),
+ItemId int foreign key references Items (ItemId),
+UnitPrice decimal (18,2),
+Quantity decimal (18,2),
+Discount decimal (18,2),
+Total decimal (18,2)
+)
+
+create table Transactions
+(
+TransactionId int identity (1,1) primary key,
+ItemId int foreign key references Items (ItemId),
+Quantity decimal (18,2),
+TransactionDate datetime,
+TypeId int
+)
+
+select * from Orders
+select * from OrdersDetails
+select * from Transactions
