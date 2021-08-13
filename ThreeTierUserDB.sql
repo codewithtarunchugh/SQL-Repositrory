@@ -12,3 +12,4 @@ UserEmail varchar (50),
 UserMobile varchar (50)
 )
 
+select * from Users
