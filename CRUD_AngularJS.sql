@@ -2,6 +2,14 @@
 USE [CRUD_Sample]
 GO
 
+create table student
+(
+ID int identity (1,1) primary key,
+Name varchar (100),
+Age varchar (50),
+Department varchar (50)
+)
+
 /****** Object:  Table [dbo].[Customers]    Script Date: 1/23/2016 10:02:11 AM ******/
 SET ANSI_NULLS ON
 GO
